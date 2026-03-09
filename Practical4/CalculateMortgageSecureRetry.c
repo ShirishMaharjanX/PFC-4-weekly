@@ -1,13 +1,11 @@
 /* CalculateMortgageSecureRetry.c
    Practical 4, Part 2 (b)
    Secure mortgage calculation with retry logic
-   @author Your Name */
+   Shirish Maharjan */
 
 #include <stdio.h>
 #include <limits.h>
 #include <stdbool.h>
-
-// Function declarations
 double largerSalary(double salary1, double salary2);
 double smallerSalary(double salary1, double salary2);
 bool validateSalary(double salary);
@@ -56,8 +54,6 @@ int main() {
 
     return 0;
 }
-
-// Secure function to read salaries with input validation
 bool readSalaries(double *salary1, double *salary2) {
     if (salary1 == NULL || salary2 == NULL) {
         return false;
@@ -70,8 +66,6 @@ bool readSalaries(double *salary1, double *salary2) {
 
     return true;
 }
-
-// Function to validate salary is within acceptable range
 bool validateSalary(double salary) {
     const double MIN_SALARY = 0.0;
     const double MAX_SALARY = 1000000.0;
@@ -82,8 +76,6 @@ bool validateSalary(double salary) {
 
     return true;
 }
-
-// Secure mortgage calculation with overflow checking
 double calculateMortgage(double salary1, double salary2) {
     double larger = largerSalary(salary1, salary2);
     double smaller = smallerSalary(salary1, salary2);
@@ -103,16 +95,12 @@ double calculateMortgage(double salary1, double salary2) {
 
     return mortgage;
 }
-
-// Function for selecting larger salary
 double largerSalary(double salary1, double salary2) {
     if (salary1 > salary2)
         return salary1;
     else
         return salary2;
 }
-
-// Function for selecting smaller salary
 double smallerSalary(double salary1, double salary2) {
     if (salary1 > salary2)
         return salary2;
